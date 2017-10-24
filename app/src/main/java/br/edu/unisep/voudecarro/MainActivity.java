@@ -107,12 +107,14 @@ public class MainActivity extends AppCompatActivity {
         novosvalores.put("kmviagem", fValorKmViagem);
         novosvalores.put("qtdpassageiros", fQuantidadePassageiros);
         novosvalores.put("valorlitrogasolina", fValorLitroGasolina);
+        //inserir os valores no banco de dados
         meubd.insert("tb_info", null, novosvalores);
 
     }
 
 
     public void Limpa(View view){
+        //método que irá limpar os valores na tela
         editValorPagoViagem.setText("");
         editValorMediaVeiculo.setText("");
         editKmViagem.setText("");
@@ -122,12 +124,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Carrega(View view){
+        //método que irá carregar os últimos valores inseridos na tela.
+
+        // abrir conexão com banco de dados
         SQLiteDatabase meubd;
         meubd = openOrCreateDatabase("voudecarro.db", SQLiteDatabase.CREATE_IF_NECESSARY,null);
 
+        //realizar a seleção dos dados na tabela tb_info e armazenar em um cursor
         Cursor meucursor = meubd.rawQuery("select * from tb_info", null);
         meucursor.moveToNext();
 
+        //setar os valores no cursor diretamente para tela.
         editValorPagoViagem.setText(meucursor.getString(meucursor.getColumnIndex("valorpago")));
         editValorMediaVeiculo.setText(meucursor.getString(meucursor.getColumnIndex("mediaveiculo")));
         editKmViagem.setText(meucursor.getString(meucursor.getColumnIndex("kmviagem")));
