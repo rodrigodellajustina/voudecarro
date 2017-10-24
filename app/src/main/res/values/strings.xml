@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Vou de Carro ?</string>
+    <string name="hint_valorviagem">Informe valor pago pela viagem</string>
+    <string name="hit_mediaveiculo">Informe a média do veículo</string>
+    <string name="hint_informekmviagem">Informe KM viagem</string>
+    <string name="hint_qtdpassageiros">Informe quantidade de passageiros</string>
+    <string name="hit_litrogasolina">Informe o valor do Litro da Gasolina</string>
+</resources>
