@@ -140,5 +140,6 @@ public class MainActivity extends AppCompatActivity {
         editKmViagem.setText(meucursor.getString(meucursor.getColumnIndex("kmviagem")));
         editQtdPassageiros.setText(meucursor.getString(meucursor.getColumnIndex("qtdpassageiros")));
         editValorLitroGasolina.setText(meucursor.getString(meucursor.getColumnIndex("valorlitrogasolina")));
-    }
+
+}
 }
